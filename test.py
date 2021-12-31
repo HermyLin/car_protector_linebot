@@ -90,8 +90,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
         
     else:
-        #message = TextSendMessage(text=event.message.text)
-        message = TextSendMessage(text=type(event.message.text))
+        message = TextSendMessage(text=event.message.text)
         line_bot_api.reply_message(event.reply_token,message)
 
 @handler.add(MessageEvent, message=LocationMessage)
