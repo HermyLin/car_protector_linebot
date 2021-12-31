@@ -20,7 +20,7 @@ def dayornight():
     "contents": [
       {
         "type": "text",
-        "text": "請選擇時辰",
+        "text": "請選擇時段",
         "weight": "bold",
         "size": "xl",
         "color": "#00bfff",
@@ -33,33 +33,50 @@ def dayornight():
         "contents": [
           {
             "type": "icon",
-            "size": "sm",
+            "size": "xs",
             "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-            "margin": "none"
+            "margin": "none",
+            "position": "relative"
           },
           {
             "type": "text",
-            "text": "貼心提醒：",
             "size": "sm",
             "color": "#999999",
-            "margin": "md",
-            "flex": 0
-          }
-          {
-            "type": "text",
-            "text": "上午 → 00:00-11:59",
-            "size": "sm",
-            "color": "#999999",
-            "margin": "none"
-          },
-          {
-            "type": "text",
-            "text": "下午 → 12:00-23:59",
-            "size": "sm",
-            "color": "#999999",
-            "margin": "none"
+            "margin": "xs",
+            "text": "貼心提醒："
           }
         ]
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "上午為 00:00－11:59",
+            "size": "xs",
+            "color": "#999999",
+            "margin": "none",
+            "flex": 0
+          }
+        ],
+        "spacing": "none"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "下午為 12:00－23:59",
+            "size": "xs",
+            "color": "#999999",
+            "margin": "none"
+          }
+        ],
+        "spacing": "none"
       }
     ],
     "position": "relative",
@@ -109,6 +126,6 @@ def dayornight():
       "separator": true
     }
   }
-}                                  
+}
     )                       
     return flex_message
