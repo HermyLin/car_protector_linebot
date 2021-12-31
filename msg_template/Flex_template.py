@@ -45,6 +45,20 @@ def dayornight():
             "margin": "md",
             "flex": 0
           }
+          {
+            "type": "text",
+            "text": "上午 → 00:00-11:59",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "none"
+          },
+          {
+            "type": "text",
+            "text": "下午 → 12:00-23:59",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "none"
+          }
         ]
       }
     ],
