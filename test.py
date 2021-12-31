@@ -52,12 +52,11 @@ def callback():
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage) 
-
 def handle_message(event):
     if event.message.text == "定位":
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
-                                                QuickReplyButton(action=LocationAction(label="點點我分享"))]))
+                                                    QuickReplyButton(action=LocationAction(label="點點我分享"))]))
         line_bot_api.reply_message(event.reply_token,text_message_location)
 
     else:
