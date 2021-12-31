@@ -1,10 +1,14 @@
 line-bot-sdk 
 bs4 
 flask 
-pymongo 
+pymongo
 datetime 
 pandas 
 SnowNLP 
 emoji 
 pyshorteners 
 scipy
+requests
+future
+flask-sqlalchemy
+urllib3
