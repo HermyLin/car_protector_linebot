@@ -4,15 +4,14 @@ import os
 import time
 import json
 from flask import Flask, request, abort
-from linebot import LineBotApi, WebhookHandler
-from linebot.exceptions import InvalidSignatureError
+from linebot import (LineBotApi, WebhookHandler)
+from linebot.exceptions import (InvalidSignatureError)
 from linebot.exceptions import LineBotApiError
 from linebot.models import *
 
 
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import IntegrityError
-import random
+#from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy.exc import IntegrityError
 import csv
 import re
 import requests
@@ -54,10 +53,6 @@ handler = WebhookHandler('d8854482344a37ad58e7b512629cc206')
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
 
 # 定義function與基礎設置
-
-#自動抓取時間、選擇時間、line定位
-#到後端的其他事情
-
 #---------------car type------------------
 car_type_list = ['汽車','機車','腳踏車']
 #----------------時間設定-------------------
@@ -89,51 +84,13 @@ def callback():
 #----------------回覆訊息介面-----------------
 @handler.add(MessageEvent, message=TextMessage) 
 def handle_message(event):
-#順序：取時間 > 取車型 > 取地點
-'''
-#選擇時間
-    if event.message.text == "選擇時段":
-        #送去Flex_template.py > 完成
-        flex_message_time = Flex_template.dayornight()
-        line_bot_api.reply_message(event.reply_token,flex_message_time)
-    
-    elif event.message.text in time_label:
-        #讀json檔 for choose time
-        period_file = open('json_robot/json_period.json', encoding="utf8") 
-        period_choose = json.load(period_file) 
-    
-        for i,t in enumerate(time_label):
-            if event.message.text == t:
-                flex_message_period = FlexSendMessage(alt_text= t + "的時段", contents= period_choose[i])
-                line_bot_api.reply_message(event.reply_token,flex_message_period) 
-        period_file.close()
-        
-#選時間 > 選車型
-    elif event.message.text in times:
-        temp_time = event.message.text
-        user_time = temp_time.split("-")[0]
-        #送去Flex_template.py > 完成
-        flex_message_car = Flex_template.cartype_choose()
-        line_bot_api.reply_message(event.reply_token,flex_message_car)  
-        
-'''   
-#抓時間 > 選車型
-    if event.message.text == "自動查找": 
-        user_time = time.strftime('%H:%M', time.localtime())
-        #送去Flex_template.py > 完成
-        flex_message_car = Flex_template.cartype_choose()
-        line_bot_api.reply_message(event.reply_token,flex_message_car)  
-'''
-#選車型 > 抓地點    
-    if event.message.text in car_type_list:
+ 
+    if event.message.text in == "機車":
         car_type = event.message.text    
         text_message_location = TextSendMessage(text='請分享位置給我，讓我守護您愛車的安全\udbc0\udc2e', 
                                 quick_reply=QuickReply(items=[
                                 QuickReplyButton(action=LocationAction(label="點點我分享"))]))    
         line_bot_api.reply_message(event.reply_token,text_message_location)
-        ###送去後端>可能要寫在location handle裡###
-        #--------------------------------------------------------------------
-'''    
     elif event.message.text == "問題回報":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
@@ -143,25 +100,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,"Oops!小守找不到您的資訊呢～")
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
-        #Text_template.py
-'''
-#當有MessageEvent而且是LocationMessage時，執行下面定義的這個函式
-@handler.add(MessageEvent, message=LocationMessage)
-def handle_location_message(event):
-    u_lat = event.message.latitude  #緯度
-    u_lon = event.message.longitude #經度
-    #user_time
-    #car_type
-    #執行後端動作 > map_for_user,sentence,risk
-    #flex_message_result = Result_flex.result(map_for_user,sentence,risk)
-    #line_bot_api.reply_message(event.reply_token,flex_message_result)
-    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=u_lat))
-'''
+
 #主程式        
-if __name__ == 'main':
-    app.run() 
+#if __name__ == 'main':
+#    app.run() 
 #    app.run(debug=True) 
     
-#if __name__ == "__main__":
-#    port = int(os.environ.get('PORT', 5000))
-#    app.run(host='0.0.0.0', port=port, debug = True)          #0000>所有人皆可連線
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug = True)          #0000>所有人皆可連線
