@@ -31,11 +31,8 @@ handler = WebhookHandler('ae8a10ffbeda85e0e00dcbb41f4f9f47')
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='開始！'))
 
 # 監聽所有來自 /callback 的 Post Request
-@app.route("/", methods=['GET'])
-def hello():
-    return "Hello Stealer!"
 
-@app.route("/", methods=['POST'])    #route路由器
+@app.route("/callback", methods=['POST'])    #route路由器
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
