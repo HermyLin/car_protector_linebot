@@ -123,7 +123,7 @@ def dayornight():
   },
   "styles": {
     "footer": {
-      "separator": true
+      "separator": True
     }
   }
 }
