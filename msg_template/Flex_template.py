@@ -1,12 +1,12 @@
 from linebot.models import FlexSendMessage
 def dayornight():
     flex_message = FlexSendMessage(
-        alt_text='選擇時段',
-        contents= {
+                    alt_text='選擇時段',
+                    contents={
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/images.png",
+    "url": "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_limit,w_1280,h_800,dpr_2/https://assets.app.engoo.com/images/CGPkj72Wn3gPmu9ebqmpS1nGQNOZQlR70NilqMAWUBm.png",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -43,22 +43,9 @@ def dayornight():
             "size": "sm",
             "color": "#999999",
             "margin": "md",
+            "flex": 0
           }
         ]
-      },
-      {
-        "type": "text",
-        "text": "上午 → 00:00-11:59",
-        "size": "sm",
-        "color": "#999999",
-        "margin": "none"
-      },
-      {
-        "type": "text",
-        "text": "下午 → 12:00-23:59",
-        "size": "sm",
-        "color": "#999999",
-        "margin": "none"
       }
     ],
     "position": "relative",
@@ -108,6 +95,6 @@ def dayornight():
       "separator": true
     }
   }
-}                                       
-        )                       
+}                                  
+    )                       
     return flex_message
