@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jun  2 21:16:35 2021
-@author: Ivan
-版權屬於「行銷搬進大程式」所有，若有疑問，可聯絡ivanyang0606@gmail.com
-Line Bot聊天機器人
-第一章 Line Bot申請與串接
-Line Bot機器人串接與測試
-"""
+
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
 
@@ -80,7 +73,13 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage) 
 def handle_message(event):
-    if event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
+    #選擇時間
+    if event.message.text == "選擇時段":
+        #送去Flex_template.py
+        flex_message_time = Flex_template.dayornight()
+        line_bot_api.reply_message(event.reply_token,flex_message_time)
+        
+    elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
                                                 QuickReplyButton(action=LocationAction(label="點點我分享"))]))
@@ -91,7 +90,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
         
     else:
-        message = TextSendMessage(text=event.message.text)
+        #message = TextSendMessage(text=event.message.text)
+        message = TextSendMessage(text=type(event.message.text))
         line_bot_api.reply_message(event.reply_token,message)
 
 @handler.add(MessageEvent, message=LocationMessage)
