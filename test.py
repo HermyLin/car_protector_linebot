@@ -26,7 +26,7 @@ line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3T
 
 # 必須放上自己的Channel Secret
 #handler = WebhookHandler('你自己的secret')
-handler = WebhookHandler('dc8a397c148af069c79f2942d1fa9a7d')
+handler = WebhookHandler('d8854482344a37ad58e7b512629cc206')
 
 #line_bot_api.push_message('你自己的ID', TextSendMessage(text='你可以開始了'))
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
@@ -52,6 +52,7 @@ def callback():
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage) 
+
 def handle_message(event):
     if event.message.text == "定位":
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
