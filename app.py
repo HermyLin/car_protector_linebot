@@ -48,11 +48,12 @@ app = Flask(__name__)
 
 #line_bot_api = LineBotApi(os.environ.get('CHANNEL_ACCESS_TOKEN'))
 #handler = WebhookHandler(os.environ.get('CHANNEL_SECRET'))
+
 line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3TgnJWqlqO6/m/H1yO8TUY+uabMjAmDTdWtc1EED8Y/1xkI/rp4BF3WOK6G32Oc6Gh1kHveeSCR0lntMHLnywb6m3bvMRLElZYAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('dc8a397c148af069c79f2942d1fa9a7d')
+handler = WebhookHandler('d8854482344a37ad58e7b512629cc206')
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
 
-"""# 定義function與基礎設置"""
+# 定義function與基礎設置
 
 #自動抓取時間、選擇時間、line定位
 #到後端的其他事情
@@ -61,22 +62,11 @@ line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(t
 car_type_list = ['汽車','機車','腳踏車']
 #----------------時間設定-------------------
 time_label = ['上午','下午']
-times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','10:00-11:59',\
-         '12:00-13:59','14:00-15:59','16:00-17:59','18:00-19:59','20:00-21:59','22:00-23:59']
+times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','10:00-11:59','12:00-13:59','14:00-15:59','16:00-17:59','18:00-19:59','20:00-21:59','22:00-23:59']
 
-#---------前後端連接code----------
-#def result(car_type,user_time,u_lat,u_lon):
-    ###
-#    return
-
-"""# 開始串接linebot"""
+# 開始串接linebot
 
 #--------接收LINE資訊-------------------
-'''
-@app.route("/", methods=['GET'])
-def hello():
-    return "Hello Steal_test!"
-'''
 @app.route("/", methods=['POST'])
 
 def callback():
@@ -86,7 +76,7 @@ def callback():
     # get request body as text
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
-    print("Request body: " + body, "Signature: " + signature)
+    #print("Request body: " + body, "Signature: " + signature)
     
     # handle webhook body
     try:
@@ -126,12 +116,12 @@ def handle_message(event):
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
         
-   
+'''   
 #抓時間 > 選車型
-    elif event.message.text == "自動查找": 
+    if event.message.text == "自動查找": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py > 完成
-        flex_message_car = Flex_template.cartype_choose(event.message.text)
+        flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
 '''
 #選車型 > 抓地點    
@@ -143,7 +133,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,text_message_location)
         ###送去後端>可能要寫在location handle裡###
         #--------------------------------------------------------------------
-    
+'''    
     elif event.message.text == "問題回報":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
@@ -168,10 +158,10 @@ def handle_location_message(event):
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=u_lat))
 '''
 #主程式        
-#if __name__ == 'main':
-#    app.run() 
+if __name__ == 'main':
+    app.run() 
 #    app.run(debug=True) 
     
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug = True)          #0000>所有人皆可連線
+#if __name__ == "__main__":
+#    port = int(os.environ.get('PORT', 5000))
+#    app.run(host='0.0.0.0', port=port, debug = True)          #0000>所有人皆可連線
