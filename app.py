@@ -117,27 +117,27 @@ def handle_message(event):
                 flex_message_period = FlexSendMessage(alt_text= t + "的時段", contents= period_choose[i])
                 line_bot_api.reply_message(event.reply_token,flex_message_period) 
         period_file.close()
-'''
+        
 #選時間 > 選車型
-    if event.message.text in times:
+    elif event.message.text in times:
         temp_time = event.message.text
         user_time = temp_time.split("-")[0]
         #送去Flex_template.py > 完成
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
         
-'''    
+   
 #抓時間 > 選車型
     elif event.message.text == "自動查找": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py > 完成
         flex_message_car = Flex_template.cartype_choose(event.message.text)
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
-
+'''
 #選車型 > 抓地點    
-    elif event.message.text in car_type_list:
+    if event.message.text in car_type_list:
         car_type = event.message.text    
-        text_message_location = TextSendMessage(text='請分享位置給我，讓我守護愛車的安全\udbc0\udc2e', 
+        text_message_location = TextSendMessage(text='請分享位置給我，讓我守護您愛車的安全\udbc0\udc2e', 
                                 quick_reply=QuickReply(items=[
                                 QuickReplyButton(action=LocationAction(label="點點我分享"))]))    
         line_bot_api.reply_message(event.reply_token,text_message_location)
@@ -146,11 +146,12 @@ def handle_message(event):
     
     elif event.message.text == "問題回報":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text= Text_template.user_report()))
         #製作問題回報表單(google)
-    '''
     else:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
+        line_bot_api.reply_message(event.reply_token,"Oops!小守找不到您的資訊呢～")
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
         #Text_template.py
 '''
