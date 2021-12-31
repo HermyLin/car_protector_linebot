@@ -91,7 +91,7 @@ def handle_message(event):
         
    
 #抓時間 > 選車型
-    if event.message.text == "自動查找": 
+    if event.message.text == "自動定時": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
