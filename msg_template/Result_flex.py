@@ -1,5 +1,5 @@
 from linebot.models import FlexSendMessage
-def result_dangerous(car_type,map_for_user,sentence,risk):
+def result_dangerous(car_type,map_for_user,sentence):
     sentence = sentence.split("/")
     watch_map = "查看"+car_type+"過去竊案地圖"
     flex_message = FlexSendMessage(
@@ -102,7 +102,7 @@ def result_dangerous(car_type,map_for_user,sentence,risk):
 }
                     )
                     
-def result_safe(car_type,map_for_user,sentence,risk):
+def result_safe(car_type,map_for_user,sentence):
     sentence = sentence.split("/")
     watch_map = "查看"+car_type+"過去竊案地圖"
     flex_message = FlexSendMessage(
