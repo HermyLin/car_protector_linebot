@@ -26,7 +26,7 @@ line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3T
 
 # 必須放上自己的Channel Secret
 #handler = WebhookHandler('你自己的secret')
-handler = WebhookHandler('dc8a397c148af069c79f2942d1fa9a7d')
+handler = WebhookHandler('d8854482344a37ad58e7b512629cc206')
 
 #line_bot_api.push_message('你自己的ID', TextSendMessage(text='你可以開始了'))
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
