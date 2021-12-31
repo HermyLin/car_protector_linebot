@@ -52,9 +52,8 @@ def callback():
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
-"""
 def handle_message(event):
-    if event.message.text in == "機車":
+    if event.message.text == "機車":
         car_type = event.message.text    
         text_message_location = TextSendMessage(text='請分享位置給我，讓我守護您愛車的安全\udbc0\udc2e', 
                                 quick_reply=QuickReply(items=[
@@ -69,17 +68,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,"Oops!小守找不到您的資訊呢～")
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
-"""
-def handle_message(event):
-    if event.message.text == "定位":
-        text_message_location = TextSendMessage(text='請分享位置給我，讓我守護您愛車的安全\udbc0\udc2e',
-                                                quick_reply=QuickReply(items=[
-                                                QuickReplyButton(action=LocationAction(label="點點我分享"))]))
-        line_bot_api.reply_message(event.reply_token,text_message_location)
 
-    else:
-        message = TextSendMessage(text=event.message.text)
-        line_bot_api.reply_message(event.reply_token,message)
+        
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
     u_lat = event.message.latitude  #緯度
