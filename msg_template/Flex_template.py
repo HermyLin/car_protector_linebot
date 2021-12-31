@@ -224,7 +224,7 @@ def cartype_choose(reply_text):
   },
   "styles": {
     "footer": {
-      "separator": true
+      "separator": True
     }
   }
 }
