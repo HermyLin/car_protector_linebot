@@ -98,7 +98,7 @@ def callback():
 
 #----------------回覆訊息介面-----------------
 @handler.add(MessageEvent, message=TextMessage) 
-#bubble資料選擇
+def handle_message(event):
 #順序：取時間 > 取車型 > 取地點
 #選擇時間
     if event.message.text == "選擇時段":
