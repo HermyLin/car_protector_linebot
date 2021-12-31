@@ -52,7 +52,7 @@ def callback():
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
-'''
+"""
 def handle_message(event):
     if event.message.text in == "機車":
         car_type = event.message.text    
@@ -69,7 +69,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,"Oops!小守找不到您的資訊呢～")
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
-'''
+"""
 def handle_message(event):
     if event.message.text == "定位":
         text_message_location = TextSendMessage(text='請分享位置給我，讓我守護您愛車的安全\udbc0\udc2e',
