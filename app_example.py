@@ -35,7 +35,7 @@ line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(t
 def hello():
     return "Hello Stealer!"
 
-@app.route("/callback", methods=['POST'])    #route路由器
+@app.route("/", methods=['POST'])    #route路由器
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
