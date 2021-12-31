@@ -54,6 +54,10 @@ handler = WebhookHandler('ae8a10ffbeda85e0e00dcbb41f4f9f47')
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
 
 # 監聽所有來自 /callback 的 Post Request
+@app.route("/", methods=['GET'])
+def hello():
+    return "Hello Stealer!"
+
 @app.route("/callback", methods=['POST'])    #route路由器
 def callback():
     # get X-Line-Signature header value
@@ -76,7 +80,7 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage) 
 def handle_message(event):
-    if event.message.text in car_type_list:
+    if event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
                                                 QuickReplyButton(action=LocationAction(label="點點我分享"))]))
