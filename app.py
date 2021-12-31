@@ -100,6 +100,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage) 
 def handle_message(event):
 #順序：取時間 > 取車型 > 取地點
+'''
 #選擇時間
     if event.message.text == "選擇時段":
         #送去Flex_template.py > 完成
@@ -116,16 +117,16 @@ def handle_message(event):
                 flex_message_period = FlexSendMessage(alt_text= t + "的時段", contents= period_choose[i])
                 line_bot_api.reply_message(event.reply_token,flex_message_period) 
         period_file.close()
-
+'''
 #選時間 > 選車型
-    elif event.message.text in times:
+    if event.message.text in times:
         temp_time = event.message.text
         user_time = temp_time.split("-")[0]
         #送去Flex_template.py > 完成
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
         
-    
+'''    
 #抓時間 > 選車型
     elif event.message.text == "自動查找": 
         user_time = time.strftime('%H:%M', time.localtime())
@@ -147,11 +148,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text = "先這樣"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text= Text_template.user_report()))
         #製作問題回報表單(google)
+    '''
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
         #Text_template.py
-
+'''
 #當有MessageEvent而且是LocationMessage時，執行下面定義的這個函式
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
@@ -163,10 +165,8 @@ def handle_location_message(event):
     #flex_message_result = Result_flex.result(map_for_user,sentence,risk)
     #line_bot_api.reply_message(event.reply_token,flex_message_result)
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=u_lat))
-
-#主程式
-line_bot_api.reply_message(event.reply_token,flex_message_location)
-        
+'''
+#主程式        
 #if __name__ == 'main':
 #    app.run() 
 #    app.run(debug=True) 
