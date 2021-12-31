@@ -1,4 +1,3 @@
-math
 bs4 
 flask
 numpy
