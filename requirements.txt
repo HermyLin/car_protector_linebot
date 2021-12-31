@@ -1,6 +1,6 @@
+line-bot-sdk 
 bs4 
-flask
-numpy
+flask 
 pymongo 
 datetime 
 pandas 
@@ -8,5 +8,3 @@ SnowNLP
 emoji 
 pyshorteners 
 scipy
-line-bot-sdk
-requests
