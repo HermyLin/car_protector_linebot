@@ -23,7 +23,7 @@ from msg_template import Flex_template, Result_flex
 
 #----------------資料庫設定-----------------
 #還沒看懂這段在幹嘛
-'''
+
 ENV = 'prod'
 
 if ENV == 'dev':
@@ -41,16 +41,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 # # #https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
-'''
+
 #----------------------------------------------------------------
 #LINE聊天機器人的基本資料(取用heroku的環境變數)
 app = Flask(__name__)
 
-#line_bot_api = LineBotApi(os.environ.get('CHANNEL_ACCESS_TOKEN'))
-#handler = WebhookHandler(os.environ.get('CHANNEL_SECRET'))
-line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3TgnJWqlqO6/m/H1yO8TUY+uabMjAmDTdWtc1EED8Y/1xkI/rp4BF3WOK6G32Oc6Gh1kHveeSCR0lntMHLnywb6m3bvMRLElZYAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('dc8a397c148af069c79f2942d1fa9a7d')
-line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
+line_bot_api = LineBotApi(os.environ.get('CHANNEL_ACCESS_TOKEN'))
+handler = WebhookHandler(os.environ.get('CHANNEL_SECRET'))
+#line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3TgnJWqlqO6/m/H1yO8TUY+uabMjAmDTdWtc1EED8Y/1xkI/rp4BF3WOK6G32Oc6Gh1kHveeSCR0lntMHLnywb6m3bvMRLElZYAdB04t89/1O/w1cDnyilFU=')
+#handler = WebhookHandler('dc8a397c148af069c79f2942d1fa9a7d')
+#line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
 
 """# 定義function與基礎設置"""
 
@@ -172,6 +172,5 @@ line_bot_api.reply_message(event.reply_token,flex_message_location)
 #    app.run(debug=True) 
     
 if __name__ == "__main__":
-    #port = int(os.environ.get('PORT', 5000))
-    #app.run(host='0.0.0.0', port=port)          #0000>所有人皆可連線
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug = True)          #0000>所有人皆可連線
