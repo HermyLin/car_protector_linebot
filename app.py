@@ -9,13 +9,12 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.exceptions import LineBotApiError
 from linebot.models import *
 
-
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import IntegrityError
-import csv
-import re
-import requests
-import pandas as pd
+#from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy.exc import IntegrityError
+#import csv
+#import re
+#import requests
+#import pandas as pd
 
 #載入我們的py檔
 from msg_template import Flex_template, Result_flex
@@ -37,9 +36,10 @@ line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(t
 
 # 開始串接linebot
 #--------接收LINE資訊-------------------
+
 @app.route("/", methods=['GET'])
 def hello():
-    return "Hello World!"
+    return "Hello Stealer!"
 
 @app.route("/", methods=['POST'])
 
@@ -49,7 +49,7 @@ def callback():
 
     # get request body as text
     body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
+    #app.logger.info("Request body: " + body)
     #print("Request body: " + body, "Signature: " + signature)
     
     # handle webhook body
