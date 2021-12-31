@@ -63,7 +63,7 @@ def callback():
 #----------------回覆訊息介面-----------------
 @handler.add(MessageEvent, message=TextMessage) 
 def handle_message(event):
-
+'''
 #選擇時間
     if event.message.text == "選擇時段":
         #送去Flex_template.py
@@ -91,12 +91,12 @@ def handle_message(event):
         
    
 #抓時間 > 選車型
-    if event.message.text == "自動定時": 
+    elif event.message.text == "自動定時": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
-
+'''
 #選車型 > 抓地點    
     if event.message.text in car_type_list:
         car_type = event.message.text    
@@ -108,11 +108,13 @@ def handle_message(event):
         #--------------------------------------------------------------------
    
     elif event.message.text == "問題回報":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="先這樣"))
+        line_bot_api.reply_message(event.reply_token,"沒有問題啦!")
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="先這樣"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text= Text_template.user_report()))
         #製作問題回報表單(google)
     else:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
+        line_bot_api.reply_message(event.reply_token,event.message.text)
+        #line_bot_api.reply_message(event.reply_token,TextSendMessage(text="Oops!小守找不到您的資訊呢～"))
         #line_bot_api.reply_message(event.reply_token,TextSendMessage(text = Text_template.keyword_warning_text()))
         #Text_template.py
 
