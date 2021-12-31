@@ -1,5 +1,5 @@
 # 載入需要的模組
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 import os
 import time
 import json
