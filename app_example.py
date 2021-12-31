@@ -21,16 +21,20 @@ app = Flask(__name__)
 
 # 必須放上自己的Channel Access Token
 #line_bot_api = LineBotApi('你自己的token')
-line_bot_api = LineBotApi('6miWE3Y5LfGTx4CIcVCGoapWfimm+8T0t6CoD5ZHqp0WUE59+/C3TgnJWqlqO6/m/H1yO8TUY+uabMjAmDTdWtc1EED8Y/1xkI/rp4BF3WOK6G32Oc6Gh1kHveeSCR0lntMHLnywb6m3bvMRLElZYAdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('g5sIQeW/GQj6y3+giEq5X85VaQzPodMv6D0o4PWKJQxezU+3IX++uqqMLOsgWDJ7EIdTeCInkRBAgMQXAfqPhWLvo+/k2yqKewC63eZORQxJsgiUt9FmIQmwDmGmgnBGaS/usc7T6EV4/uFv6E1eDQdB04t89/1O/w1cDnyilFU=')
 
 # 必須放上自己的Channel Secret
 #handler = WebhookHandler('你自己的secret')
-handler = WebhookHandler('d8854482344a37ad58e7b512629cc206')
+handler = WebhookHandler('ae8a10ffbeda85e0e00dcbb41f4f9f47')
 
 #line_bot_api.push_message('你自己的ID', TextSendMessage(text='你可以開始了'))
 line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='開始！'))
 
 # 監聽所有來自 /callback 的 Post Request
+@app.route("/", methods=['GET'])
+def hello():
+    return "Hello Stealer!"
+
 @app.route("/callback", methods=['POST'])    #route路由器
 def callback():
     # get X-Line-Signature header value
