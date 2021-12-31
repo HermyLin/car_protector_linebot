@@ -11,10 +11,10 @@ from linebot.models import *
 
 #from flask_sqlalchemy import SQLAlchemy
 #from sqlalchemy.exc import IntegrityError
-#import csv
-#import re
-#import requests
-#import pandas as pd
+import csv
+import re
+import requests
+import pandas as pd
 
 #載入我們的py檔
 from msg_template import Flex_template, Result_flex
@@ -41,7 +41,7 @@ line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(t
 def hello():
     return "Hello Stealer!"
 
-@app.route("/", methods=['POST'])
+@app.route("/callback", methods=['POST'])
 
 def callback():
     # get X-Line-Signature header value
