@@ -2,7 +2,6 @@ line-bot-sdk
 bs4 
 flask 
 pymongo
-time
 datetime 
 pandas 
 SnowNLP 
