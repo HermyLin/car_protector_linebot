@@ -206,7 +206,7 @@ def handle_message(event):
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
         car_type = event.message.text
-        
+                
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
                                                 QuickReplyButton(action=LocationAction(label="點點我分享"))]))
@@ -218,7 +218,10 @@ def handle_message(event):
     else:
         message = TextSendMessage(text="Oops！小守找不到您的資訊呢～")
         line_bot_api.reply_message(event.reply_token,message)
-
+    
+    global car_type
+    global user_time
+    
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
     car_type = "汽車"
