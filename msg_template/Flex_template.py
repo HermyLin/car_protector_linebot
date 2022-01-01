@@ -6,7 +6,7 @@ def dayornight():
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/day%20or%20night.jpg",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/01_day_or_night.jpg?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -126,7 +126,7 @@ def cartype_choose():
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/03_cartype.jpg?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
