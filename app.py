@@ -221,7 +221,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
 
 @handler.add(MessageEvent, message=LocationMessage)
-def handle_location_message(event):
+def handle_location_message(event,car_type,user_time):
     u_lat = event.message.latitude  #緯度
     u_lon = event.message.longitude #經度
     #user_address = event.message.address
