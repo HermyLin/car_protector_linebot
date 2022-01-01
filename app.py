@@ -28,7 +28,7 @@ import csv
 import numpy as np
 
 #載入其他py檔
-from msg_template import Flex_template, Result_flex, Text_template
+from msg_template import Flex_template, Result_template, Text_template
 
 #------------------------------------------
 # 定義function與基礎設置
