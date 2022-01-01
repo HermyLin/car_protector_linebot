@@ -38,9 +38,9 @@
             "flex": 0
           }
         ],
-		"spacing": "none",
+	"spacing": "none"
       },
-	  {
+      {
         "type": "separator",
         "margin": "lg"
       },
@@ -183,9 +183,9 @@
             "flex": 0
           }
         ],
-		"spacing": "none",
+	"spacing": "none"
       },
-	  {
+      {
         "type": "separator",
         "margin": "lg"
       },
