@@ -3,14 +3,10 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_day.jpeg?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    },
     "margin": "none"
   },
   "body": {
@@ -148,14 +144,10 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_night.jpeg?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    },
     "margin": "none"
   },
   "body": {
