@@ -1,244 +1,291 @@
 [
   {
-    "type": "bubble",
-    "hero": {
-      "type": "image",
-      "url": "[]",
-      "size": "full",
-      "aspectRatio": "20:12",
-      "aspectMode": "cover"
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
     },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "要在什麼時段停車呢？",
-          "weight": "bold",
-          "size": "xl",
-          "color": "#876C5A"
-        },
-        {
-          "type": "separator",
-          "margin": "lg"
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "00:00-01:59",
-                "label": "00:00-01:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
-            },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "02:00-03:59",
-                "text": "02:00-03:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "04:00-05:59",
-                "label": "04:00-05:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
-            },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "06:00-07:59",
-                "text": "06:00-07:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "08:00-09:59",
-                "label": "08:00-09:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
-            },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "10:00-11:59",
-                "text": "10:00-11:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-      ]
-    }
+    "margin": "none"
   },
-
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇時間區間",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#00bfff"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "none",
+        "contents": [
+          {
+            "type": "text",
+            "text": "要在什麼時候停車呢？",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "none",
+            "flex": 0
+          }
+        ],
+		"spacing": "none",
+      },
+	  {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "00:00-01:59",
+              "text": "00:00-01:59"
+            },
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "02:00-03:59",
+              "text": "02:00-03:59"
+            },
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "04:00-05:59",
+              "text": "04:00-05:59"
+            },
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "06:00-07:59",
+              "text": "06:00-07:59"
+            },
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "08:00-09:59",
+              "text": "08:00-09:59"
+            },
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "10:00-11:59",
+              "text": "10:00-11:59"
+            },
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "md"
+      }
+    ]
+  }
+},
 
   {
-    "type": "bubble",
-    "hero": {
-      "type": "image",
-      "url": "[]",
-      "size": "full",
-      "aspectRatio": "20:12",
-      "aspectMode": "cover"
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
     },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "要在什麼時段停車呢？",
-          "weight": "bold",
-          "size": "xl",
-          "color": "#876C5A"
-        },
-        {
-          "type": "separator",
-          "margin": "lg"
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "12:00-13:59",
-                "label": "12:00-13:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
+    "margin": "none"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇時間區間",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#00bfff"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "none",
+        "contents": [
+          {
+            "type": "text",
+            "text": "要在什麼時候停車呢？",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "none",
+            "flex": 0
+          }
+        ],
+		"spacing": "none",
+      },
+	  {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "12:00-13:59",
+              "text": "12:00-13:59"
             },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "14:00-15:59",
-                "text": "14:00-15:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "16:00-17:59",
-                "label": "16:00-17:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "14:00-15:59",
+              "text": "14:00-15:59"
             },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "18:00-19:59",
-                "text": "18:00-19:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "lg",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "text": "20:00-21:59",
-                "label": "20:00-21:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "color": "#797D62"
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "16:00-17:59",
+              "text": "16:00-17:59"
             },
-            {
-              "type": "button",
-              "action": {
-                "type": "message",
-                "label": "22:00-23:59",
-                "text": "22:00-23:59"
-              },
-              "style": "primary",
-              "height": "sm",
-              "margin": "xxl",
-              "color": "#797D62"
-            }
-          ]
-        },
-      ]
-    }
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "18:00-19:59",
+              "text": "18:00-19:59"
+            },
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "20:00-21:59",
+              "text": "20:00-21:59"
+            },
+            "style": "primary",
+            "color": "#deb887"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "22:00-23:59",
+              "text": "22:00-23:59"
+            },
+            "flex": 0,
+            "color": "#deb887"
+          }
+        ],
+        "flex": 0,
+        "margin": "md"
+      }
+    ]
   }
+}
 ]

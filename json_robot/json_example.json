@@ -1,0 +1,97 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "margin": "none",
+    "position": "relative",
+    "gravity": "top"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "判斷結果：略為危險！",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#ffff00",
+        "margin": "none"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#000000",
+            "margin": "none",
+            "text": "根據分析結果，您附近2公里有："
+          },
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#000000",
+            "margin": "none",
+            "text": "sentence(0)"
+          },
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#000000",
+            "margin": "none",
+            "text": "sentence(1)"
+          },
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#000000",
+            "margin": "none",
+            "text": "sentence(2)"
+          }
+        ]
+      }
+    ],
+    "position": "relative",
+    "margin": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "watch_map",
+          "uri": "http://www.eion.com.tw/Blogger/?Pid=1008"
+        },
+        "margin": "none",
+        "color": "#cd853f",
+        "height": "sm",
+        "position": "relative",
+        "style": "link"
+      }
+    ],
+    "borderWidth": "none",
+    "cornerRadius": "none",
+    "margin": "xs",
+    "paddingAll": "lg",
+    "paddingTop": "md",
+    "paddingBottom": "lg",
+    "paddingStart": "xxl",
+    "paddingEnd": "xxl"
+  },
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  }
+}
