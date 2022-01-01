@@ -32,7 +32,7 @@ def dayornight():
         "contents": [
           {
             "type": "icon",
-            "size": "xs",
+            "size": "sm",
             "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
             "margin": "none",
             "position": "relative"
