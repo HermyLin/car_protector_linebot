@@ -135,6 +135,7 @@ def risk_judge(nums):
 
 def results_for_all(car_type,user_time,u_lat,u_lon):
     numbers_for_all_case = case_count(user_time,u_lat,u_lon) 
+    print(",".join(numbers_for_all_case))
     risk, sentence = risk_judge(numbers_for_all_case)
     map_for_user_URL = map_for_user(car_type,user_time)
     return (risk, sentence, map_for_user_URL)
@@ -256,7 +257,10 @@ def handle_location_message(event):
                                         contents= Result_template.result_safe(car_type,map_for_user_URL,sentence),
                                         quick_reply= QuickReply(items=[QuickReplyButton(action=LocationAction(label="再定位一次!"))]))
                                         
-    line_bot_api.reply_message(event.reply_token,flex_message_result) 
+    #line_bot_api.reply_message(event.reply_token,flex_message_result)
+    print(sentence)
+    print(risk)
+    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=map_for_user_URL))
 
 #主程式
 import os
