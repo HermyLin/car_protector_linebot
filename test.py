@@ -20,7 +20,7 @@ import requests
 import pandas as pd
 
 #載入我們的py檔
-from msg_template import Flex_template, Result_flex
+from msg_template import Flex_template.py, Result_flex.py
 
 
 #------------------------------------------
@@ -80,7 +80,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,flex_message_time)
     
     #抓時間 > 選車型
-    elif event.message.text == "自動定時": 
+    elif event.message.text == "自動查找": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
