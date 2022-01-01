@@ -119,7 +119,7 @@ def dayornight():
     )                       
     return flex_message
 
-def cartype_choose(reply_text):
+def cartype_choose():
     flex_message = FlexSendMessage(
                     alt_text="選車中",
                     contents={
@@ -214,7 +214,6 @@ def cartype_choose(reply_text):
     "paddingStart": "xxl",
     "paddingEnd": "xxl"
   }
-
    ]
   }
 }
