@@ -1,7 +1,7 @@
 from linebot.models import FlexSendMessage
 def dayornight():
     flex_message = FlexSendMessage(
-                    alt_text='選擇時段',
+                    alt_text='白天還是晚上呢？',
                     contents={
   "type": "bubble",
   "hero": {
@@ -12,7 +12,6 @@ def dayornight():
     "aspectMode": "cover",
     "margin": "none",
     "position": "relative",
-    "gravity": "top"
   },
   "body": {
     "type": "box",
@@ -76,28 +75,28 @@ def dayornight():
           }
         ],
         "spacing": "none"
-      }
-    ],
-    "position": "relative",
-    "margin": "none"
-  },
-  "footer": {
-    "type": "box",
-    "layout": "horizontal",
-    "spacing": "md",
-    "contents": [
+      },
       {
-        "type": "button",
-        "style": "primary",
-        "height": "sm",
-        "action": {
-          "type": "message",
-          "label": "上午",
-          "text": "上午"
-        },
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "contents": [
+           {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+                "type": "message",
+                "label": "上午",
+                "text": "上午"
+            },
         "margin": "none",
         "color": "#deb887"
-      },
+        },
       {
         "type": "button",
         "style": "primary",
@@ -109,27 +108,20 @@ def dayornight():
         },
         "color": "#deb887"
       },
-      {
-        "type": "spacer",
-        "size": "xs"
-      }
     ],
-    "borderWidth": "none",
     "margin": "xs",
     "paddingAll": "lg"
-  },
-  "styles": {
-    "footer": {
-      "separator": True
+        }
+        ]
     }
-  }
 }
+
     )                       
     return flex_message
 
 def cartype_choose(reply_text):
     flex_message = FlexSendMessage(
-                    alt_text=reply_text,
+                    alt_text="選車中",
                     contents={
   "type": "bubble",
   "hero": {
@@ -167,16 +159,16 @@ def cartype_choose(reply_text):
             "text": "要停放什麼車呢？"
           }
         ]
-      }
-    ],
-    "position": "relative",
-    "margin": "none"
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "md",
-    "contents": [
+      },
+      {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
       {
         "type": "button",
         "style": "primary",
@@ -221,12 +213,10 @@ def cartype_choose(reply_text):
     "paddingBottom": "lg",
     "paddingStart": "xxl",
     "paddingEnd": "xxl"
-  },
-  "styles": {
-    "footer": {
-      "separator": True
-    }
+  }
+
+   ]
   }
 }
-    )                       
+    )
     return flex_message
