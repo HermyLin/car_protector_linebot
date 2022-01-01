@@ -27,7 +27,7 @@ import pandas as pd
 import csv
 
 #載入其他py檔
-from msg_template import Flex_template, Result_flex
+from msg_template import Flex_template, Result_flex, Text_template
 
 #------------------------------------------
 # 定義function與基礎設置
