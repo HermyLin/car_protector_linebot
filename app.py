@@ -37,6 +37,11 @@ car_type_list = ["汽車","機車","腳踏車"]
 time_label = ['上午','下午']
 times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','10:00-11:59','12:00-13:59','14:00-15:59','16:00-17:59','18:00-19:59','20:00-21:59','22:00-23:59']
 #------------------------------------------
+def local_time(standard_time):
+    new_hour = int(standard_time.split(":")[0])+8
+    new_time = str(new_hour) + ":" + standard_time.split(":")[1]
+    return new_time
+
 def rad(d):
     r = d * math.pi / 180.0
     return r
@@ -200,7 +205,7 @@ def handle_message(event):
     
     #抓時間 > 選車型
     elif event.message.text == "自動查找": 
-        user_time = time.strftime('%H:%M', time.localtime())
+        user_time = local_time(time.strftime('%H:%M', time.localtime()))
         #送去Flex_template.py
         #flex_message_car = Flex_template.cartype_choose()
         flex_message_car = TextSendMessage(text=user_time)
