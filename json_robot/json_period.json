@@ -3,7 +3,7 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_01_day.png?raw=true",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_day.png?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -144,7 +144,7 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_02_night.png?raw=true",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/02_night.png?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
