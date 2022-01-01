@@ -82,15 +82,12 @@ def handle_message(event):
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://ithelp.ithome.com.tw/images/ironman/11th/event/kv_event/kv-bg-addfly.png",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/images.png",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    },
-    "backgroundColor": "#FFFFFF"
+    "margin": "none",
+    "position": "relative",
   },
   "body": {
     "type": "box",
@@ -98,69 +95,101 @@ def handle_message(event):
     "contents": [
       {
         "type": "text",
-        "text": "Menu",
+        "text": "請選擇時段",
         "weight": "bold",
         "size": "xl",
-        "margin": "md"
+        "color": "#00bfff",
+        "margin": "none"
       },
       {
-        "type": "text",
-        "text": "Please select",
-        "margin": "md"
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "icon",
+            "size": "xs",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "margin": "none",
+            "position": "relative"
+          },
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "xs",
+            "text": "貼心提醒："
+          }
+        ]
       },
       {
-        "type": "spacer"
-      }
-    ],
-    "action": {
-      "type": "uri",
-      "label": "View detail",
-      "uri": "http://linecorp.com/",
-      "altUri": {
-        "desktop": "http://example.com/page/123"
-      }
-    }
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "上午為 00:00－11:59",
+            "size": "xs",
+            "color": "#999999",
+            "margin": "none",
+          }
+        ],
+        "spacing": "none"
+      },
       {
-        "type": "button",
-        "action": {
-          "type": "postback",
-          "label": "Buy",
-          "data": "action=buy&itemid=123"
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "下午為 12:00－23:59",
+            "size": "xs",
+            "color": "#999999",
+            "margin": "none"
+          }
+        ],
+        "spacing": "none"
+      },
+      {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "contents": [
+           {
+            "type": "button",
+            "style": "primary",
+            "height": "sm",
+            "action": {
+                "type": "message",
+                "label": "上午",
+                "text": "上午"
+            },
+        "margin": "none",
+        "color": "#deb887"
         },
-        "height": "sm"
-      },
       {
         "type": "button",
+        "style": "primary",
+        "height": "sm",
         "action": {
           "type": "message",
-          "label": "it 邦幫忙鐵人賽",
-          "text": "it 邦幫忙鐵人賽"
+          "label": "下午",
+          "text": "下午"
         },
-        "height": "sm"
+        "color": "#deb887"
       },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "View detail",
-          "uri": "https://ithelp.ithome.com.tw/2020ironman"
-        },
-        "height": "sm"
-      }
     ],
-    "flex": 0
-  },
-  "styles": {
-    "footer": {
-      "separator": True
+    "margin": "xs",
+    "paddingAll": "lg"
+        }
+        ]
     }
-  }
 }
     )                       
         line_bot_api.reply_message(event.reply_token,flex_message_time)
