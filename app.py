@@ -39,6 +39,8 @@ times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','
 #------------------------------------------
 def local_time(standard_time):
     new_hour = int(standard_time.split(":")[0])+8
+    if new_hour >= 24:
+        new_hour = new_hour-24
     new_time = str(new_hour) + ":" + standard_time.split(":")[1]
     return new_time
 
@@ -207,8 +209,8 @@ def handle_message(event):
     elif event.message.text == "自動查找": 
         user_time = local_time(time.strftime('%H:%M', time.localtime()))
         #送去Flex_template.py
-        #flex_message_car = Flex_template.cartype_choose()
-        flex_message_car = TextSendMessage(text=user_time)
+        flex_message_car = Flex_template.cartype_choose()
+        #flex_message_car = TextSendMessage(text=user_time)
         line_bot_api.reply_message(event.reply_token,flex_message_car)
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
