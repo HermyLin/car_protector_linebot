@@ -77,7 +77,7 @@ def map_for_user(case,time):
     motor_map = ['motor0','motor2','motor4','motor6','motor8','motor10','motor12','motor14','motor16','motor18','motor20','motor22']          
     car_map = ['car0','car2','car4','car6','car8','car10','car12','car14','car16','car18','car20','car22']
     
-        if case == "汽車":
+    if case == "汽車":
         for time_map in range(len(car_map)):
             car_map_website = car_map[time_map]
             car_map_dict[car_map_website] = df[car_map_website]
