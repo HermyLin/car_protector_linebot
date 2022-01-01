@@ -79,122 +79,89 @@ def handle_message(event):
         flex_message_time = FlexSendMessage(
             alt_text='pick time',
             contents={
-                                "type": "bubble",
-                                "hero": {
-                                  "type": "image",
-                                  "url": "https://github.com/yumei86/iRamen_linebot/blob/master/image/TWmap.png?raw=true",
-                                  "size": "full",
-                                  "aspectRatio": "20:13",
-                                  "aspectMode": "cover",
-                                  "position": "relative"
-                                },
-                                "body": {
-                                  "type": "box",
-                                  "layout": "vertical",
-                                  "contents": [
-                                    {
-                                      "type": "text",
-                                      "text": "你在哪裡？",
-                                      "weight": "bold",
-                                      "size": "xl",
-                                      "contents": [],
-                                      "color": "#876C5A"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "請幫助我選擇你在台灣的哪個位置：）",
-                                      "size": "xs",
-                                      "margin": "sm"
-                                    },
-                                    {
-                                      "type": "separator",
-                                      "margin": "lg"
-                                    },
-                                    {
-                                      "type": "box",
-                                      "layout": "horizontal",
-                                      "contents": [
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "message",
-                                            "label": "北部",
-                                            "text": "北部"
-                                          },
-                                          "style": "primary",
-                                          "height": "sm",
-                                          "color": "#797D62"
-                                        },
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "message",
-                                            "label": "中部",
-                                            "text": "中部"
-                                          },
-                                          "style": "primary",
-                                          "margin": "xxl",
-                                          "height": "sm",
-                                          "color": "#797D62"
-                                        }
-                                      ],
-                                      "margin": "lg"
-                                    },
-                                    {
-                                      "type": "box",
-                                      "layout": "horizontal",
-                                      "contents": [
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "message",
-                                            "label": "南部",
-                                            "text": "南部"
-                                          },
-                                          "style": "primary",
-                                          "height": "sm",
-                                          "color": "#797D62"
-                                        },
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "message",
-                                            "label": "東部",
-                                            "text": "東部"
-                                          },
-                                          "style": "primary",
-                                          "margin": "xxl",
-                                          "height": "sm",
-                                          "color": "#797D62"
-                                        }
-                                      ],
-                                      "margin": "md"
-                                    },
-                                    {
-                                      "type": "separator",
-                                      "margin": "lg"
-                                    },
-                                    {
-                                      "type": "box",
-                                      "layout": "vertical",
-                                      "contents": [
-                                        {
-                                          "type": "button",
-                                          "action": {
-                                            "type": "message",
-                                            "label": "開定位探店GPS",
-                                            "text": "定位"
-                                          },
-                                          "style": "primary",
-                                          "margin": "xxl",
-                                          "height": "sm",
-                                          "color": "#797D62"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                    }
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://ithelp.ithome.com.tw/images/ironman/11th/event/kv_event/kv-bg-addfly.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    },
+    "backgroundColor": "#FFFFFF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Menu",
+        "weight": "bold",
+        "size": "xl",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": "Please select",
+        "margin": "md"
+      },
+      {
+        "type": "spacer"
+      }
+    ],
+    "action": {
+      "type": "uri",
+      "label": "View detail",
+      "uri": "http://linecorp.com/",
+      "altUri": {
+        "desktop": "http://example.com/page/123"
+      }
+    }
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "Buy",
+          "data": "action=buy&itemid=123"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "it 邦幫忙鐵人賽",
+          "text": "it 邦幫忙鐵人賽"
+        },
+        "height": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "View detail",
+          "uri": "https://ithelp.ithome.com.tw/2020ironman"
+        },
+        "height": "sm"
+      }
+    ],
+    "flex": 0
+  },
+  "styles": {
+    "footer": {
+      "separator": True
+    }
+  }
+}
     )                       
         line_bot_api.reply_message(event.reply_token,flex_message_time)
     
