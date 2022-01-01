@@ -37,6 +37,10 @@ car_type_list = ["汽車","機車","腳踏車"]
 time_label = ['上午','下午']
 times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','10:00-11:59','12:00-13:59','14:00-15:59','16:00-17:59','18:00-19:59','20:00-21:59','22:00-23:59']
 #------------------------------------------
+def to_global_var(varname):
+    global varname
+    return varname
+
 def rad(d):
     r = d * math.pi / 180.0
     return r
@@ -192,24 +196,24 @@ def handle_message(event):
 #選時間 > 選車型
     elif event.message.text in times:
         temp_time = event.message.text
-        user_time = temp_time.split("-")[0]
+        user_time = to_global_var(temp_time.split("-")[0])
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
     
     #抓時間 > 選車型
     elif event.message.text == "自動查找": 
-        user_time = time.strftime('%H:%M', time.localtime())
+        user_time = to_global_var(time.strftime('%H:%M', time.localtime()))
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
-        car_type = event.message.text
-        text_message_location = TextSendMessage(text = car_type)
-        #text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
-        #                                        quick_reply=QuickReply(items=[
-        #                                        QuickReplyButton(action=LocationAction(label="點點我分享"))]))
+        car_type = to_global_var(event.message.text)
+        
+        text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
+                                                quick_reply=QuickReply(items=[
+                                                QuickReplyButton(action=LocationAction(label="點點我分享"))]))
         line_bot_api.reply_message(event.reply_token,text_message_location)
 
     elif event.message.text == "問題回報":
@@ -223,8 +227,8 @@ def handle_message(event):
 def handle_location_message(event):
     #car_type = "汽車"
     #user_time = time.strftime('%H:%M', time.localtime())
-    global car_type
-    global user_time
+    #global car_type
+    #global user_time
     u_lat = event.message.latitude  #緯度
     u_lon = event.message.longitude #經度
     #user_address = event.message.address
