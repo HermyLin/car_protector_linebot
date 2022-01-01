@@ -1,6 +1,7 @@
 line-bot-sdk 
 bs4 
-flask 
+random
+flask
 pymongo
 datetime 
 pandas 
