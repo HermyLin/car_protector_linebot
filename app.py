@@ -90,11 +90,10 @@ def map_for_user(case,time):
     return(map_for_user_URL)
 
 def case_count(time, local_x, local_y):
-    global num_sum
     time = int(time.split(":")[0])
+    num_sum = []
     if time % 2 != 0:
         time -= 1
-        num_sum = []
         range_km = 2
     
         for case in ["car","moto","bike"]:
@@ -111,7 +110,7 @@ def case_count(time, local_x, local_y):
                 
                 if getDistance(case_x, case_y, local_x, local_y) <= range_km:
                     num +=1       
-            num_sum.append(num)
+        num_sum.append(num)
     return num_sum 
   
 def risk_judge(nums):        
