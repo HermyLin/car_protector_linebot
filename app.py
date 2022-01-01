@@ -106,7 +106,7 @@ def case_count(time, local_x, local_y):
     for case in ["car","moto","bike"]:
         num = 0
 
-        file = open(f"{case}_{time}.csv", "r",encoding='big5')
+        file = open(f"2hr_location/{case}_{time}.csv", "r",encoding='big5')
         for line in file:
             line = line.strip(" ")
             line = line.strip("\n")
