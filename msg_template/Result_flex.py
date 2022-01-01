@@ -2,9 +2,7 @@ from linebot.models import FlexSendMessage
 def result_dangerous(car_type,map_for_user_URL,sentence):
     sentence_cut = sentence.split("/")
     watch_map = "查看附近"+car_type+"過去竊案地圖"
-    flex_message = FlexSendMessage(
-                    alt_text='判斷結果',
-                    contents = {
+    flex_message = {
   "type": "bubble",
   "hero": {
     "type": "image",
@@ -100,15 +98,12 @@ def result_dangerous(car_type,map_for_user_URL,sentence):
     "margin": "none"
   }
 }
-)
     return flex_message
     
 def result_little_dangerous(car_type,map_for_user_URL,sentence):
     sentence_cut = sentence.split("/")
     watch_map = "查看附近"+car_type+"過去竊案地圖"
-    flex_message = FlexSendMessage(
-                    alt_text='判斷結果',
-                    contents = {
+    flex_message = {
   "type": "bubble",
   "hero": {
     "type": "image",
@@ -204,15 +199,12 @@ def result_little_dangerous(car_type,map_for_user_URL,sentence):
     "margin": "none"
   }
 }
-)
     return flex_message
 
 def result_safe(car_type,map_for_user_URL,sentence):
     sentence_cut = sentence.split("/")
     watch_map = "查看附近"+car_type+"過去竊案地圖"
-    flex_message = FlexSendMessage(
-                    alt_text='判斷結果',
-                    contents = {
+    flex_message = {
   "type": "bubble",
   "hero": {
     "type": "image",
@@ -308,6 +300,5 @@ def result_safe(car_type,map_for_user_URL,sentence):
     "margin": "none"
   }
 }
-)
     return flex_message
 
