@@ -201,14 +201,14 @@ def handle_message(event):
 }
     )                       
         line_bot_api.reply_message(event.reply_token,flex_message_time)
-    '''
+    
     #抓時間 > 選車型
-    elif event.message.text == "自動查找": 
-        user_time = time.strftime('%H:%M', time.localtime())
-        #送去Flex_template.py
-        flex_message_car = Flex_template.cartype_choose()
-        line_bot_api.reply_message(event.reply_token,flex_message_car)
-    '''    
+    #elif event.message.text == "自動查找": 
+    #    user_time = time.strftime('%H:%M', time.localtime())
+    #    #送去Flex_template.py
+    #    flex_message_car = Flex_template.cartype_choose()
+    #    line_bot_api.reply_message(event.reply_token,flex_message_car)
+        
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
