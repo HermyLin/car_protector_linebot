@@ -84,8 +84,8 @@ def handle_message(event):
         period_choose = json.load(period_file) 
     
         for i,tt in enumerate(time_label):
-            if event.message.text == t:
-                flex_message_period = FlexSendMessage(alt_text= tt + "的時段", contents= period_choose[i])
+            if event.message.text == tt:
+                flex_message_period = FlexSendMessage(alt_text= tt + "時段", contents= period_choose[i])
                 line_bot_api.reply_message(event.reply_token,flex_message_period) 
         period_file.close()
         
