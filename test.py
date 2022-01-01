@@ -78,7 +78,7 @@ def handle_message(event):
         flex_message_time = Flex_template.dayornight()
         line_bot_api.reply_message(event.reply_token,flex_message_time)
     
-    elif event.message.text == "上午" event.message.text == "下午":
+    elif event.message.text == "上午" or event.message.text == "下午":
         #讀json檔 for choose time
         period_file = open('json_robot/json_period.json', encoding="utf8") 
         period_choose = json.load(period_file) 
