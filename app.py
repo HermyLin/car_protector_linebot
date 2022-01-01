@@ -192,20 +192,20 @@ def handle_message(event):
 #選時間 > 選車型
     elif event.message.text in times:
         temp_time = event.message.text
-        global user_time = temp_time.split("-")[0]
+        user_time = temp_time.split("-")[0]
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)  
     
     #抓時間 > 選車型
     elif event.message.text == "自動查找": 
-        global user_time = time.strftime('%H:%M', time.localtime())
+        user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py
         flex_message_car = Flex_template.cartype_choose()
         line_bot_api.reply_message(event.reply_token,flex_message_car)
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
-        global car_type = event.message.text
+        car_type = event.message.text
                 
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
                                                 quick_reply=QuickReply(items=[
@@ -221,8 +221,10 @@ def handle_message(event):
     
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
-    car_type = "汽車"
-    user_time = time.strftime('%H:%M', time.localtime())
+    #car_type = "汽車"
+    #user_time = time.strftime('%H:%M', time.localtime())
+    global car_type
+    global user_time
     u_lat = event.message.latitude  #緯度
     u_lon = event.message.longitude #經度
     #user_address = event.message.address
