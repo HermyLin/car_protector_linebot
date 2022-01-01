@@ -195,11 +195,110 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,flex_message_time)
     
     #抓時間 > 選車型
-    #elif event.message.text == "自動查找": 
-    #    user_time = time.strftime('%H:%M', time.localtime())
-    #    #送去Flex_template.py
-    #    flex_message_car = Flex_template.cartype_choose()
-    #    line_bot_api.reply_message(event.reply_token,flex_message_car)
+    elif event.message.text == "自動查找": 
+        user_time = time.strftime('%H:%M', time.localtime())
+        #送去Flex_template.py
+        #flex_message_car = Flex_template.cartype_choose()
+        flex_message_car = FlexSendMessage(
+                    alt_text=reply_text,
+                    contents={
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "margin": "none",
+    "position": "relative",
+    "gravity": "top"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇車種",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#00bfff",
+        "margin": "none"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "none",
+            "text": "要停放什麼車呢？"
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "margin": "lg"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "message",
+          "label": "汽車",
+          "text": "汽車"
+        },
+        "margin": "none",
+        "color": "#deb887",
+        "height": "sm",
+        "position": "relative"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "機車",
+          "text": "機車"
+        },
+        "color": "#deb887"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "腳踏車",
+          "text": "腳踏車"
+        },
+        "color": "#deb887"
+      }
+    ],
+    "borderWidth": "none",
+    "cornerRadius": "none",
+    "margin": "xs",
+    "paddingAll": "lg",
+    "paddingTop": "md",
+    "paddingBottom": "lg",
+    "paddingStart": "xxl",
+    "paddingEnd": "xxl"
+  }
+
+   ]
+  }
+}
+    ) 
+        line_bot_api.reply_message(event.reply_token,flex_message_car)
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
         text_message_location = TextSendMessage(text='偷偷分享位置給我，我才能守護你的安全喔！\udbc0\udc2e',
