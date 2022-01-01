@@ -42,21 +42,21 @@ def result_dangerous(car_type,map_for_user_URL,sentence):
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(0)
+            "text": sentence_cut[0]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(1)
+            "text": sentence_cut[1]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(2)
+            "text": sentence_cut[2]
           }
         ],
         "spacing": "none"
@@ -143,21 +143,21 @@ def result_little_dangerous(car_type,map_for_user_URL,sentence):
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(0)
+            "text": sentence_cut[0]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(1)
+            "text": sentence_cut[1]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(2)
+            "text": sentence_cut[2]
           }
         ],
         "spacing": "none"
@@ -244,21 +244,21 @@ def result_safe(car_type,map_for_user_URL,sentence):
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(0)
+            "text": sentence_cut[0]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(1)
+            "text": sentence_cut[1]
           },
           {
             "type": "text",
             "size": "sm",
             "color": "#000000",
             "margin": "none",
-            "text": sentence_cut(2)
+            "text": sentence_cut[2]
           }
         ],
         "spacing": "none"
