@@ -37,6 +37,26 @@ car_type_list = ["汽車","機車","腳踏車"]
 #----------------時間設定-------------------
 time_label = ['上午','下午']
 times = ['00:00-01:59','02:00-03:59','04:00-05:59','06:00-07:59','08:00-09:59','10:00-11:59','12:00-13:59','14:00-15:59','16:00-17:59','18:00-19:59','20:00-21:59','22:00-23:59']
+#---------------製作map_url字典-------------------
+df = pd.read_csv("stolen_map.csv")
+bike_map_dict = {}
+motor_map_dict = {}
+car_map_dict = {}   
+bike_map = ['bike0','bike2','bike4','bike6','bike8','bike10','bike12','bike14','bike16','bike18','bike20','bike22']
+motor_map = ['motor0','motor2','motor4','motor6','motor8','motor10','motor12','motor14','motor16','motor18','motor20','motor22']          
+car_map = ['car0','car2','car4','car6','car8','car10','car12','car14','car16','car18','car20','car22']
+ 
+for time_num in range(0,12,1):
+    car_map_website = car_map[time_num]
+    car_map_dict[car_map_website] = df[car_map_website]
+
+    motor_map_website = motor_map[time_num]
+    motor_map_dict[motor_map_website] = df[motor_map_website]
+
+    bike_map_website = bike_map[time_num]
+    bike_map_dict[bike_map_website] = df[bike_map_website]
+#------------------------------------------
+#function definition
 #------------------------------------------
 def local_time(standard_time):
     new_hour = int(standard_time.split(":")[0])+8
@@ -66,34 +86,16 @@ def getDistance(lat1, lng1, lat2, lng2):
 def map_for_user(case,time):
     time = int(time.split(":")[0])
     if time % 2 != 0:
-        time_map = ((time-1)/2)-1
+        time_map = int((time-1)/2)
     else:
-        time_map = (time/2)-1
-    df = pd.read_csv("stolen_map.csv")
-    bike_map_dict = {}
-    motor_map_dict = {}
-    car_map_dict = {}   
-    bike_map = ['bike0','bike2','bike4','bike6','bike8','bike10','bike12','bike14','bike16','bike18','bike20','bike22']
-    motor_map = ['motor0','motor2','motor4','motor6','motor8','motor10','motor12','motor14','motor16','motor18','motor20','motor22']          
-    car_map = ['car0','car2','car4','car6','car8','car10','car12','car14','car16','car18','car20','car22']
-    
+        time_map = int((time/2))
+
     if case == "汽車":
-        for time_map in range(len(car_map)):
-            car_map_website = car_map[time_map]
-            car_map_dict[car_map_website] = df[car_map_website]
-            map_for_user_URL = car_map_dict[car_map[time_map]]
-
+        map_for_user_URL = car_map_dict[car_map[time_map]]
     elif case == "機車":
-        for time_map in range(len(motor_map)):
-            motor_map_website = motor_map[time_map]
-            motor_map_dict[motor_map_website] = df[motor_map_website]
-            map_for_user_URL = motor_map_dict[motor_map[time_map]]
-
+        map_for_user_URL = motor_map_dict[motor_map[time_map]]
     elif case == "腳踏車":
-        for time_map in range(len(bike_map)):
-            bike_map_website = bike_map[time_map]
-            bike_map_dict[bike_map_website] = df[bike_map_website]
-            map_for_user_URL = bike_map_dict[bike_map[time_map]]
+        map_for_user_URL = bike_map_dict[bike_map[time_map]]
 
     return "".join(np.ndarray.tolist(map_for_user_URL.values))
 
