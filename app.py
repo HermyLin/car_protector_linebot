@@ -217,15 +217,16 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
         
     else:
-        message = TextSendMessage(text=event.message.text)
+        message = TextSendMessage(text="Oops!小守找不到您的資訊呢～")
         line_bot_api.reply_message(event.reply_token,message)
 
 @handler.add(MessageEvent, message=LocationMessage)
-def handle_location_message(event,car_type,user_time):
+def handle_location_message(event):
+    car_type = "汽車"
+    user_time = time.strftime('%H:%M', time.localtime())
     u_lat = event.message.latitude  #緯度
     u_lon = event.message.longitude #經度
     #user_address = event.message.address
-
     risk, sentence, map_for_user_URL = results_for_all(car_type,user_time,u_lat,u_lon)
     
     if risk == "危險":
