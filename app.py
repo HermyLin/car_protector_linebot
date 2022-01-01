@@ -90,6 +90,7 @@ def map_for_user(case,time):
     return(map_for_user_URL)
 
 def case_count(time, local_x, local_y):
+    global num_sum
     time = int(time.split(":")[0])
     if time % 2 != 0:
         time -= 1
@@ -113,8 +114,8 @@ def case_count(time, local_x, local_y):
             num_sum.append(num)
     return num_sum 
   
-def risk_judge(num_sum):        
-    num_tot = sum(num_sum)
+def risk_judge(nums):        
+    num_tot = sum(nums)
     range_km = 2
 
     risk = "略微安全"
