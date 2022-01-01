@@ -135,8 +135,6 @@ def risk_judge(nums):
 
 def results_for_all(car_type,user_time,u_lat,u_lon):
     numbers_for_all_case = case_count(user_time,u_lat,u_lon) 
-    numbers_for_all_case_str = [str(i) for i in numbers_for_all_case]
-    print(",".join(numbers_for_all_case_str))
     risk, sentence = risk_judge(numbers_for_all_case)
     map_for_user_URL = map_for_user(car_type,user_time)
     return (risk, sentence, map_for_user_URL)
