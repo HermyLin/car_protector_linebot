@@ -113,7 +113,8 @@ def case_count(time, local_x, local_y):
         num_sum.append(num)
     return num_sum 
   
-def risk_judge(nums):        
+def risk_judge(nums):
+    num_list = nums
     num_tot = sum(nums)
     range_km = 2
 
@@ -123,7 +124,7 @@ def risk_judge(nums):
     elif num_tot <= 1:
         risk = "安全"
         
-    message_result = str(num_sum[0])+ "件汽車竊盜/" + str(num_sum[1]) + "件機車竊盜/" + str(num_sum[2]) + "件腳踏車竊盜"
+    message_result = str(num_list[0])+ "件汽車竊盜/" + str(num_list[1]) + "件機車竊盜/" + str(num_list[2]) + "件腳踏車竊盜"
     return (risk, message_result)
 
 def results_for_all(car_type,user_time,u_lat,u_lon):
