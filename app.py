@@ -202,7 +202,8 @@ def handle_message(event):
     elif event.message.text == "自動查找": 
         user_time = time.strftime('%H:%M', time.localtime())
         #送去Flex_template.py
-        flex_message_car = Flex_template.cartype_choose()
+        #flex_message_car = Flex_template.cartype_choose()
+        flex_message_car = TextSendMessage(text=user_time)
         line_bot_api.reply_message(event.reply_token,flex_message_car)
         
     elif event.message.text == car_type_list[0] or event.message.text == car_type_list[1] or event.message.text == car_type_list[2]:
