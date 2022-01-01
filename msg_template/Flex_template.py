@@ -6,7 +6,7 @@ def dayornight():
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/images.png",
+    "url": "https://github.com/HermyLin/stealer/blob/main/bot_image/day%20or%20night.jpg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
