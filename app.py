@@ -103,20 +103,20 @@ def case_count(time, local_x, local_y):
     if time % 2 != 0:
         time -= 1
     
-        for case in ["car","moto","bike"]:
-            num = 0
+    for case in ["car","moto","bike"]:
+        num = 0
 
-            file = open(f"2hr_location/{case}_{time}.csv", "r",encoding='big5')
-            for line in file:
-                line = line.strip(" ")
-                line = line.strip("\n")
-                line = line.split(",")
-                case_x = line[4]
-                case_y = line[5]
-                
-                if getDistance(case_x, case_y, local_x, local_y) <= range_km:
-                    num +=1       
-            num_sum.append(num)
+        file = open(f"{case}_{time}.csv", "r",encoding='big5')
+        for line in file:
+            line = line.strip(" ")
+            line = line.strip("\n")
+            line = line.split(",")
+            case_x = line[4]
+            case_y = line[5]
+              
+            if getDistance(case_x, case_y, local_x, local_y) <= range_km:
+                num +=1       
+        num_sum.append(num)
     return num_sum 
   
 def risk_judge(nums):
