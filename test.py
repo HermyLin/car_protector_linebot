@@ -20,7 +20,7 @@ import requests
 import pandas as pd
 
 #載入我們的py檔
-#from msg_template import Flex_template, Result_flex
+from msg_template import Flex_template, Result_flex
 
 #------------------------------------------
 # 定義function與基礎設置
