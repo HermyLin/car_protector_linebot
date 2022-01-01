@@ -1,5 +1,3 @@
-import random
-
 def problems_report():
     report_text =f"\udbc0\udc31常見問題\n\n• 按鈕沒有回應：\n可能是小守睡著了，請多點幾次呦！\udbc0\udc8e\udbc0\udc8e\
                     \n\
