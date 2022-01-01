@@ -1,6 +1,5 @@
 line-bot-sdk 
 bs4 
-random
 flask
 pymongo
 datetime 
