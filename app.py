@@ -25,6 +25,7 @@ from math import sin
 import math
 import pandas as pd
 import csv
+import numpy as np
 
 #載入其他py檔
 from msg_template import Flex_template, Result_flex, Text_template
@@ -76,25 +77,25 @@ def map_for_user(case,time):
     motor_map = ['motor0','motor2','motor4','motor6','motor8','motor10','motor12','motor14','motor16','motor18','motor20','motor22']          
     car_map = ['car0','car2','car4','car6','car8','car10','car12','car14','car16','car18','car20','car22']
     
-    if case == "汽車":
+        if case == "汽車":
         for time_map in range(len(car_map)):
             car_map_website = car_map[time_map]
             car_map_dict[car_map_website] = df[car_map_website]
-            map_for_user_URL = car_map_dict[map[time_map]]
+            map_for_user_URL = car_map_dict[car_map[time_map]]
 
     elif case == "機車":
         for time_map in range(len(motor_map)):
             motor_map_website = motor_map[time_map]
             motor_map_dict[motor_map_website] = df[motor_map_website]
-            map_for_user_URL = motor_map_dict[map[time_map]]
+            map_for_user_URL = motor_map_dict[motor_map[time_map]]
 
     elif case == "腳踏車":
         for time_map in range(len(bike_map)):
             bike_map_website = bike_map[time_map]
             bike_map_dict[bike_map_website] = df[bike_map_website]
-            map_for_user_URL = bike_map_dict[map[time_map]]
+            map_for_user_URL = bike_map_dict[bike_map[time_map]]
 
-    return(map_for_user_URL)
+    return "".join(np.ndarray.tolist(map_for_user_URL.values))
 
 def case_count(time, local_x, local_y):
     time = int(time.split(":")[0])
