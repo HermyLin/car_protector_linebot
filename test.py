@@ -75,8 +75,27 @@ def handle_message(event):
     #選擇時間
     if event.message.text == "選擇時段":
         #送去Flex_template.py
-        flex_message_time = Flex_template.dayornight()                  
+        flex_message_time = Flex_template.dayornight()
         line_bot_api.reply_message(event.reply_token,flex_message_time)
+    
+    elif event.message.text == "上午" event.message.text == "下午":
+        #讀json檔 for choose time
+        period_file = open('json_robot/json_period.json', encoding="utf8") 
+        period_choose = json.load(period_file) 
+    
+        for i,tt in enumerate(time_label):
+            if event.message.text == t:
+                flex_message_period = FlexSendMessage(alt_text= tt + "的時段", contents= period_choose[i])
+                line_bot_api.reply_message(event.reply_token,flex_message_period) 
+        period_file.close()
+        
+#選時間 > 選車型
+    elif event.message.text in times:
+        temp_time = event.message.text
+        user_time = temp_time.split("-")[0]
+        #送去Flex_template.py
+        flex_message_car = Flex_template.cartype_choose()
+        line_bot_api.reply_message(event.reply_token,flex_message_car)  
     
     #抓時間 > 選車型
     elif event.message.text == "自動查找": 
