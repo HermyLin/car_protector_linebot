@@ -77,8 +77,8 @@ def handle_message(event):
         #送去Flex_template.py > 失敗
         #flex_message_time = Flex_template.dayornight()                       
         flex_message_time = FlexSendMessage(
-                    alt_text='選擇時段',
-                    contents={
+            alt_text='pick time',
+            contents={
   "type": "bubble",
   "hero": {
     "type": "image",
