@@ -100,7 +100,7 @@ def case_count(time, local_x, local_y):
             num = 0
 
             #df_case = pd.read_csv(f"2hr_location/{case}_{time}.csv",encoding='big5')
-            file = open(f"{case}_{time}.csv", "r",encoding='big5')
+            file = open(f"2hr_location/{case}_{time}.csv", "r",encoding='big5')
             for line in file:
                 line = line.strip(" ")
                 line = line.strip("\n")
