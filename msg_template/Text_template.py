@@ -7,8 +7,6 @@ def problems_report():
                     \n\
                     \n• 未來有機會會開放地區搜尋的功能～\
                     \n\
-                    \n\
-                    \n\
-                    \n歡迎填寫使用者回饋表單，小守團隊會繼續改進！\n\udbc0\udc7a\\udbc0\udc7a\\udbc0\udc7a\\udbc0\udc7a\\udbc0\udc7a\
+                    \n歡迎填寫使用者回饋表單，幫助小守團隊改進！\n非常感謝您\udbc0\udc7a\\udbc0\udc7a\\udbc0\udc7a\
                     \nhttps://reurl.cc/Npa596"
     return report_text 
