@@ -213,11 +213,10 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,text_message_location)
 
     elif event.message.text == "問題回報":
-        message = TextSendMessage(text="no problem!")
-        line_bot_api.reply_message(event.reply_token,message)
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text= Text_template.problems_report()))
         
     else:
-        message = TextSendMessage(text="Oops!小守找不到您的資訊呢～")
+        message = TextSendMessage(text="Oops！小守找不到您的資訊呢～")
         line_bot_api.reply_message(event.reply_token,message)
 
 @handler.add(MessageEvent, message=LocationMessage)
