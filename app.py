@@ -234,13 +234,13 @@ def handle_location_message(event):
                                         contents= Result_template.result_dangerous(car_type,map_for_user_URL,sentence),
                                         quick_reply= QuickReply(items=[QuickReplyButton(action=LocationAction(label="再定位一次!"))]))
 
-    elif risk == "略為安全"
+    elif risk == "略為安全":
         flex_message_result = FlexSendMessage(
                                         alt_text='結果出爐囉～',
                                         contents= Result_template.result_little_dangerous(car_type,map_for_user_URL,sentence),
                                         quick_reply= QuickReply(items=[QuickReplyButton(action=LocationAction(label="再定位一次!"))]))
 
-    elif risk == "安全"
+    elif risk == "安全":
         flex_message_result = FlexSendMessage(
                                         alt_text='結果出爐囉～',
                                         contents= Result_template.result_safe(car_type,map_for_user_URL,sentence),
