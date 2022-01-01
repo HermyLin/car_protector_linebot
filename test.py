@@ -77,7 +77,7 @@ def handle_message(event):
         #送去Flex_template.py > 失敗
         #flex_message_time = Flex_template.dayornight()                       
         flex_message_time = FlexSendMessage(
-            alt_text='pick time',
+            alt_text='白天還是晚上呢？',
             contents={
   "type": "bubble",
   "hero": {
@@ -182,6 +182,7 @@ def handle_message(event):
           "label": "下午",
           "text": "下午"
         },
+        "margin": "xxl",
         "color": "#deb887"
       },
     ],
@@ -200,7 +201,7 @@ def handle_message(event):
         #送去Flex_template.py
         #flex_message_car = Flex_template.cartype_choose()
         flex_message_car = FlexSendMessage(
-                    alt_text=reply_text,
+                    alt_text="選車中",
                     contents={
   "type": "bubble",
   "hero": {
