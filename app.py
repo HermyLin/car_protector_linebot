@@ -46,7 +46,7 @@ bike_map = ['bike0','bike2','bike4','bike6','bike8','bike10','bike12','bike14','
 motor_map = ['motor0','motor2','motor4','motor6','motor8','motor10','motor12','motor14','motor16','motor18','motor20','motor22']          
 car_map = ['car0','car2','car4','car6','car8','car10','car12','car14','car16','car18','car20','car22']
  
-for time_num in range(car_map):
+for time_num in range(len(car_map)):
     car_map_dict[car_map[time_num]] = df[car_map[time_num]]
     motor_map_dict[motor_map[time_num]] = df[motor_map[time_num]]
     bike_map_dict[bike_map[time_num]] = df[bike_map[time_num]]
