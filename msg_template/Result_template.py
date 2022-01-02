@@ -6,7 +6,7 @@ def result_dangerous(car_type,map_for_user_URL,sentence):
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "url": "https://github.com/HermyLin/car_protector_linebot/blob/main/bot_image/R01_danger.jpg?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -107,7 +107,7 @@ def result_little_dangerous(car_type,map_for_user_URL,sentence):
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "url": "https://github.com/HermyLin/car_protector_linebot/blob/main/bot_image/R02_attention.png?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -120,10 +120,10 @@ def result_little_dangerous(car_type,map_for_user_URL,sentence):
         "contents": [
       {
         "type": "text",
-        "text": "判斷結果：危險！",
+        "text": "判斷結果：略為危險！",
         "weight": "bold",
         "size": "xl",
-        "color": "#ff0000",
+        "color": "#ffd500",
         "margin": "none"
       },
       {
@@ -208,7 +208,7 @@ def result_safe(car_type,map_for_user_URL,sentence):
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://images.twgreatdaily.com/images/elastic/iuP/iuPP1mwBJleJMoPMp5x0.jpg",
+    "url": "https://github.com/HermyLin/car_protector_linebot/blob/main/bot_image/R03_safe.png?raw=true",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -221,10 +221,10 @@ def result_safe(car_type,map_for_user_URL,sentence):
         "contents": [
       {
         "type": "text",
-        "text": "判斷結果：危險！",
+        "text": "判斷結果：安全！",
         "weight": "bold",
         "size": "xl",
-        "color": "#ff0000",
+        "color": "#32cd32",
         "margin": "none"
       },
       {
