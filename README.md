@@ -9,7 +9,11 @@ In addition to the difficulty of finding parking spaces,  more importantly, the 
 * We expected to develope a LINEBOT for all-aged users, telling how safety for their desired parking place and time. 
 
 ### App demo
-* Main features
-<img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_02.jpg?raw=true" alt="demo feature" width="70%"/>
-* Results presentation  
-<img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_result.png?raw=true" alt="result" width="70%"/>
+* Main features\
+  <img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_02.jpg?raw=true" alt="demo feature" width="70%"/>  
+* Results presentation\
+  <img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_result.png?raw=true" alt="result" width="70%"/>  
+  
+### Set up
+Scan the QR code below and add "小偷放大鏡" as your friend
+<img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/00stealer_QRcode.png?raw=true" alt="result" width="70%"/> 
