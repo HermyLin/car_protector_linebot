@@ -20,4 +20,10 @@ Scan the QR code below and add "小偷放大鏡" to your friend list.\
 
 ---  
 
-### Our production process
+### Our production process  
+Main program: Python\
+<img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/02_process.png?raw=true" alt="process" width="70%"/>
+
+#### Back-end  
+
+#### Front-end  
