@@ -11,4 +11,5 @@ In addition to the difficulty of finding parking spaces,  more importantly, the 
 ### App demo
 * Main features
 <img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_02.jpg?raw=true" alt="demo feature" width="70%"/>
-* Results presentation
+* Results presentation  
+<img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_result.png?raw=true" alt="result" width="70%"/>
