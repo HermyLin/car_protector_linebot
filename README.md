@@ -14,7 +14,7 @@ In addition to the difficulty of finding parking spaces,  more importantly, the 
 * Results presentation\
   <img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/01_demo_result.png?raw=true" alt="result" width="70%"/>  
   
-### Set up
+### How to use?
 Scan the QR code below and add "小偷放大鏡" to your friend list.\
 <img src="https://github.com/HermyLin/car_protector_linebot/blob/main/readme_image/00stealer_QRcode.png?raw=true" alt="result" width="15%"/> 
 
