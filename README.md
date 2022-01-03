@@ -6,7 +6,7 @@
 ### Motivation
 * Taipei City is a place with well-developed transportation.  
 In addition to the difficulty of finding parking spaces,  more importantly, the cars are easy to be stolen!!!  
-* We expected to develope a LINEBOT for all-aged users, telling how safety for their desired parking place and time. 
+* We expected to develop a LINEBOT for all-aged users, telling how safety for their desired parking place and time. 
 
 ### App demo
 * Main features\
