@@ -13,6 +13,4 @@ future
 flask-sqlalchemy
 urllib3
 gunicorn
-psycopg2
-Pillow
 numpy
