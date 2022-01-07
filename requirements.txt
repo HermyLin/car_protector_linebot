@@ -13,4 +13,3 @@ future
 flask-sqlalchemy
 urllib3
 gunicorn
-numpy
