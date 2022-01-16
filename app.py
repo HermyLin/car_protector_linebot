@@ -144,7 +144,6 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
-#失敗的，還需要去了解
 
 #----------------------------------------------------------------
 # 監聽所有來自 /callback 的 Post Request
