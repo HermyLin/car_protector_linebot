@@ -10,6 +10,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
+from linebot.exceptions import LineBotApiError
 
 #frontend
 import os
@@ -144,6 +145,26 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
+#----------------資料庫設定-----------------
+
+ENV = 'prod'
+
+if ENV == 'dev':
+  from dotenv import load_dotenv
+  load_dotenv()
+  SQLALCHEMY_DATABASE_URI_PRIVATE = os.getenv("SQLALCHEMY_DATABASE_URI_PRIVATE")
+  app.debug = True
+  app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI_PRIVATE
+else:
+  DATABASE_URL = os.environ.get('DATABASE_URL')
+  app.debug = False
+  app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+#----------------------------------------------------------------
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/", methods=['GET'])
 def hello():
