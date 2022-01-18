@@ -10,6 +10,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
+from linebot.exceptions import LineBotApiError
 
 #frontend
 import os
@@ -141,15 +142,10 @@ def results_for_all(car_type,user_time,u_lat,u_lon):
 #LINE聊天機器人的基本資料
 app = Flask(__name__)
 
-#line_bot_api = LineBotApi('你自己的token')
-line_bot_api = LineBotApi('g5sIQeW/GQj6y3+giEq5X85VaQzPodMv6D0o4PWKJQxezU+3IX++uqqMLOsgWDJ7EIdTeCInkRBAgMQXAfqPhWLvo+/k2yqKewC63eZORQxJsgiUt9FmIQmwDmGmgnBGaS/usc7T6EV4/uFv6E1eDQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
+handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
-#handler = WebhookHandler('你自己的secret')
-handler = WebhookHandler('ae8a10ffbeda85e0e00dcbb41f4f9f47')
-
-#line_bot_api.push_message('你自己的ID', TextSendMessage(text='你可以開始了'))
-line_bot_api.push_message('Ub91b0ca857ac49515bcfce296d54baf6', TextSendMessage(text='讓我們開始吧！'))
-
+#----------------------------------------------------------------
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/", methods=['GET'])
 def hello():
